@@ -17133,6 +17133,34 @@
                         }), (function () {
                             r.pause()
                         }))
+                    })), i.default.utils.toArray(".-gradient .my-scroll-text").forEach(((e, t) => {
+                        let n = e.clientWidth;
+                        const r = new i.default.timeline({}),
+                            o = new i.default.timeline({});
+                        r.to(e, 7, {
+                            ease: "none",
+                            xPercent: -100,
+                            modifiers: {
+                                x: i.default.utils.unitize((e => parseFloat(e) % n))
+                            },
+                            repeat: -1
+                        }), o.fromTo(e, {
+                            scale: .8,
+                            duration: .65,
+                            ease: "Power2.easeOut"
+                        }, {
+                            scale: 1,
+                            duration: .65,
+                            ease: "Power2.easeOut"
+                        }, 0), r.pause(), o.pause(), $(".-gradient").hover((function () {
+                            o.play(0), o.play(), r.play(),
+                            $(".div-1-anime .my-scroll-text").show(),
+                            $(".div-1-anime .my-shape img").hide()
+                        }), (function () {
+                            r.pause(),
+                            $(".div-1-anime .my-scroll-text").hide(),
+                            $(".div-1-anime .my-shape img").show()
+                        }))
                     })), i.default.utils.toArray(".-white .my-scroll-text").forEach(((e, t) => {
                         let n = e.clientWidth;
                         const r = new i.default.timeline({}),
